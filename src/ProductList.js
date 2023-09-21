@@ -3,7 +3,7 @@ import './ProductList.css';
 
 function ProductList() {
   const [products, setProducts] = useState([]);
-  const [showAll, setShowAll] = useState(false); // Estado para mostrar todos los productos
+  const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -11,15 +11,17 @@ function ProductList() {
       .then((data) => setProducts(data));
   }, []);
 
-  const chunkSize = 3; // Tamaño del conjunto
-  const maxVisibleProducts = showAll ? products.length : 6; // Muestra todos los productos si showAll es verdadero
+  const chunkSize = 3;
+  const maxVisibleProducts = showAll ? products.length : 6;
 
-  const productChunks = Array.from(
-    { length: Math.ceil(maxVisibleProducts / chunkSize) },
-    (_, index) => products.slice(index * chunkSize, (index + 1) * chunkSize)
-  );
+  const chunkProducts = () => {
+    return Array.from(
+      { length: Math.ceil(maxVisibleProducts / chunkSize) },
+      (_, index) =>
+        products.slice(index * chunkSize, (index + 1) * chunkSize)
+    );
+  };
 
-  // Función para manejar el clic en el botón "Ver más"
   const handleShowAllClick = () => {
     setShowAll(true);
   };
@@ -29,7 +31,7 @@ function ProductList() {
       <h1>Lista de Productos</h1>
       <table className="product-table">
         <tbody>
-          {productChunks.map((chunk, rowIndex) => (
+          {chunkProducts().map((chunk, rowIndex) => (
             <tr key={rowIndex}>
               {chunk.map((product) => (
                 <td key={product.id} className="product-cell">
@@ -46,7 +48,9 @@ function ProductList() {
         </tbody>
       </table>
       {!showAll && (
-        <button onClick={handleShowAllClick}>Ver más</button>
+        <div className="button-container">
+          <button onClick={handleShowAllClick}>Ver más</button>
+        </div>
       )}
     </div>
   );

@@ -1,56 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
 .product-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #333; /* Fondo negro para la tabla */
-    color: white; /* Texto en color blanco */
-  }
-  
-  .product-cell {
-    width: 33.33%;
-    vertical-align: top;
-    padding: 10px;
-  }
-  
-  .product-content {
-    border: 1px solid #444; /* Borde gris oscuro */
-    padding: 10px;
-    text-align: center;
-    height: 100%;
-    background-color: #222; /* Fondo negro más oscuro */
-  }
-  
-  .product-content img {
-    max-width: 100%;
-  }
-  
-  h3, p, strong {
-    color: white; /* Texto en color blanco */
-  }
-  
-  button {
-    background-color: #222; /* Fondo del botón negro más oscuro */
-    color: white; /* Texto en color blanco */
-    border: none;
-    padding: 10px 20px;
-    margin-top: 20px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #444; /* Color de fondo más claro al pasar el mouse */
-  }
-  
-  .product-title {
-    background-color: #333; /* Fondo negro */
-    color: white; /* Texto en color blanco */
-    padding: 20px;
-    text-align: center;
-    font-size: 24px; /* Tamaño del título */
-    font-weight: bold; /* Texto en negrita */
-  }
-  h1 {
-    background-color: #000; /* Fondo negro */
-    color: white; /* Texto en color blanco */
-    padding: 20px;
-    text-align: center;
-  }
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #333;
+  color: white;
+}
+
+.product-cell {
+  width: 33.33%;
+  vertical-align: top;
+  padding: 10px;
+}
+
+.product-content {
+  border: 1px solid #444;
+  padding: 10px;
+  text-align: center;
+  min-height: 200px;
+  background-color: #222;
+}
+
+.product-content img {
+  max-width: 100%;
+}
+
+h3, p, strong {
+  color: white;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  background-color: #222;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+.product-title {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+h1 {
+  background-color: #000;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
